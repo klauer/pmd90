@@ -1,0 +1,577 @@
+
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 115
+y 171
+w 365
+h 570
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-8.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 4
+textColor index 14
+ctlFgColor1 index 30
+ctlFgColor2 index 32
+ctlBgColor1 index 34
+ctlBgColor2 index 35
+topShadowColor index 37
+botShadowColor index 44
+snapToGrid
+gridSize 5
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 365
+h 25
+lineColor index 26
+fill
+fillColor index 26
+lineWidth 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 60
+y 5
+w 365
+h 25
+font "helvetica-medium-r-12.0"
+fgColor index 0
+bgColor index 0
+useDisplayBg
+value {
+  "PiezoMotor PMD90 $(P)$(R)"
+}
+endObjectProperties
+
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 225
+y 50
+w 90
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Stop motion"
+}
+
+endObjectProperties
+# (Menu Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 25
+y 50
+w 200
+h 20
+fgColor index 14
+onColor index 34
+offColor index 34
+inconsistentColor index 35
+topShadowColor index 37
+botShadowColor index 44
+3d
+font "helvetica-medium-r-18.0"
+objType "controls"
+controlPv "$(P)$(R)CMD:STOP"
+indicatorPv ""
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 225
+y 70
+w 90
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "CMD:WRITE_NVRAM"
+}
+
+endObjectProperties
+# (Menu Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 25
+y 70
+w 200
+h 20
+fgColor index 14
+onColor index 34
+offColor index 34
+inconsistentColor index 35
+topShadowColor index 37
+botShadowColor index 44
+3d
+font "helvetica-medium-r-18.0"
+objType "controls"
+controlPv "$(P)$(R)CMD:WRITE_NVRAM"
+indicatorPv ""
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 225
+y 90
+w 90
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Waveform mode (with resolution=0)"
+}
+
+endObjectProperties
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 25
+y 90
+w 200
+h 20
+fgColor index 14
+bgColor index 34
+inconsistentColor index 35
+topShadowColor index 37
+botShadowColor index 44
+controlPv "$(P)$(R)CMD:WAVEFORM"
+indicatorPv "$(P)$(R)WAVEFORM"
+font "helvetica-medium-r-18.0"
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 225
+y 110
+w 90
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "MOVING"
+}
+
+endObjectProperties
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 25
+y 110
+w 200
+h 20
+fgColor index 14
+bgColor index 34
+inconsistentColor index 35
+topShadowColor index 37
+botShadowColor index 44
+controlPv ""
+indicatorPv "$(P)$(R)MOVING"
+font "helvetica-medium-r-18.0"
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 5
+release 0
+x 125
+y 130
+w 70
+h 10
+controlPv "$(P)$(R)VERSION"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 26
+bgColor index 4
+autoHeight
+
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 225
+y 130
+w 90
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Device version"
+}
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 5
+release 0
+x 125
+y 150
+w 70
+h 10
+controlPv "$(P)$(R)DIG_INPUT"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 26
+bgColor index 4
+autoHeight
+
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 225
+y 150
+w 90
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Digital inputs value"
+}
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 5
+release 0
+x 125
+y 170
+w 70
+h 10
+controlPv "$(P)$(R)RAW_ENCODER_POS"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 26
+bgColor index 4
+autoHeight
+
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 225
+y 170
+w 90
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Encoder counts"
+}
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 5
+release 0
+x 125
+y 190
+w 95
+h 14
+controlPv "$(P)$(R)ENCODER_RES"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 225
+y 190
+w 90
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Encoder counts to um (resolution)"
+}
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 5
+release 0
+x 125
+y 210
+w 95
+h 14
+controlPv "$(P)$(R)ENCODER_POS"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 225
+y 210
+w 90
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Encoder position"
+}
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 5
+release 0
+x 125
+y 230
+w 95
+h 14
+controlPv "$(P)$(R)CMD:MOVE_NEG"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 225
+y 230
+w 90
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Move in negative direction"
+}
+endObjectProperties
+
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 5
+release 0
+x 125
+y 250
+w 95
+h 14
+controlPv "$(P)$(R)CMD:MOVE_POS"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 51
+editable
+autoHeight
+
+motifWidget
+nullColor index 32
+smartRefresh
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 225
+y 250
+w 90
+h 20
+font "helvetica-medium-r-8.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Move in positive direction"
+}
+endObjectProperties
+
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 25
+y 50
+w 320
+h 220
+lineColor index 26
+lineWidth 0
+endObjectProperties
+
+

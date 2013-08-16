@@ -1,0 +1,128 @@
+# Device version
+record(stringin, "$(P)$(R)VERSION")
+{
+    field(DESC, "Device version")
+    field(DTYP, "stream")
+    field(INP,  "@devPMD90.proto read_string($(P)$(R),?) $(PORT) $(A)")
+    field(PINI, "YES")
+    field(SCAN, "Passive")
+}
+
+# Encoder readout
+record(longin, "$(P)$(R)RAW_ENCODER_POS")
+{
+    field(DESC, "Encoder counts")
+    field(DTYP, "stream")
+    field(INP,  "@devPMD90.proto read_int($(P)$(R),E) $(PORT) $(A)")
+    field(SCAN, ".1 second")
+    field(FLNK, "$(P)$(R)ENCODER_POS")
+}
+
+record(ao, "$(P)$(R)ENCODER_RES")
+{
+    field(DESC, "Encoder counts to um (resolution)")
+    field(DTYP, "Soft Channel")
+    field(VAL, "32")
+    field(FLNK, "$(P)$(R)ENCODER_POS")
+}
+
+record(calc, "$(P)$(R)ENCODER_POS")
+{
+    field(DESC, "Encoder position")
+    field(INPA, "$(P)$(R)RAW_ENCODER_POS")
+    field(INPB, "$(P)$(R)ENCODER_RES")
+    field(CALC, "A/B")
+}
+
+# Waveform mode
+record(mbbo, "$(P)$(R)CMD:WAVEFORM")
+{
+    field(DESC, "Waveform mode (with resolution=0)")
+    field(VAL, "0")
+    field(DTYP, "stream")
+    field(OUT,  "@devPMD90.proto write_int($(P)$(R),M) $(PORT) $(A)")
+    field(PINI, "NO")
+    field(ZRVL, 0)
+    field(ONVL, 1)
+    field(TWVL, 2)
+    field(THVL, 3)
+
+    field(ZRST, "Rhomb_force_32")
+    field(ONST, "Rhomb_speed_32")
+    field(TWST, "Omega564_32")
+    field(THST, "Omega564_256")
+    field(FLNK, "$(P)$(R)WAVEFORM")
+}
+
+record(mbbi, "$(P)$(R)WAVEFORM")
+{
+    field(DESC, "Waveform mode (with resolution=0)")
+    field(VAL, "0")
+    field(DTYP, "stream")
+    field(INP,  "@devPMD90.proto read_int($(P)$(R),m) $(PORT) $(A)")
+    field(PINI, "NO")
+    field(SCAN, "1 second")
+    field(ZRVL, 0)
+    field(ONVL, 1)
+    field(TWVL, 2)
+    field(THVL, 3)
+
+    field(ZRST, "Rhomb_force_32")
+    field(ONST, "Rhomb_speed_32")
+    field(TWST, "Omega564_32")
+    field(THST, "Omega564_256")
+}
+
+# Movement
+record(longout, "$(P)$(R)CMD:MOVE_POS")
+{
+    field(DESC, "Move in positive direction")
+    field(DTYP, "stream")
+    field(OUT,  "@devPMD90.proto write_int($(P)$(R),+) $(PORT) $(A)")
+}
+
+record(longout, "$(P)$(R)CMD:MOVE_NEG")
+{
+    field(DESC, "Move in negative direction")
+    field(DTYP, "stream")
+    field(OUT,  "@devPMD90.proto write_int($(P)$(R),-) $(PORT) $(A)")
+}
+
+# Stop
+record(bo, "$(P)$(R)CMD:STOP")
+{
+    field(DESC, "Stop motion")
+    field(DTYP, "stream")
+    field(OUT,  "@devPMD90.proto write($(P)$(R),S) $(PORT) $(A)")
+    field(ZNAM, "Stop")
+    field(ONAM, "Stop")
+    field(TPRO, 1)
+}
+
+# Write to nvram
+record(bo, "$(P)$(R)CMD:WRITE_NVRAM")
+{
+    field(DTYP, "stream")
+    field(OUT,  "@devPMD90.proto write($(P)$(R),W) $(PORT) $(A)")
+    field(ZNAM, "Off")
+    field(ONAM, "Write")
+}
+
+# Motor status
+record(bi, "$(P)$(R)MOVING")
+{
+    field(DTYP, "stream")
+    field(INP,  "@devPMD90.proto read_plain_int($(P)$(R),*) $(PORT) $(A)")
+    field(ZNAM, "Stopped")
+    field(ONAM, "Moving")
+    field(SCAN, ".2 second")
+}
+
+# Digital inputs
+record(longin, "$(P)$(R)DIG_INPUT")
+{
+    field(DESC, "Digital inputs value")
+    field(DTYP, "stream")
+    field(INP,  "@devPMD90.proto read_int($(P)$(R),I) $(PORT) $(A)")
+    field(SCAN, ".1 second")
+}

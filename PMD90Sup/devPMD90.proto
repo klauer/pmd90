@@ -1,0 +1,51 @@
+Separator = CR;
+ExtraInput = Ignore;
+
+valid_chars = "[a-zA-Z0-9._: ]";
+
+read_float {
+    @mismatch { in "!%(\$1ERROR_CODE)d"; }
+    out "\$2?";
+    in "%f";
+}
+
+set_float {
+    @mismatch { in "!%(\$1ERROR_CODE)d"; }
+    out "\$2 %f";
+    in "!0";
+}
+
+# Generic
+write {
+    out "\$2";
+}
+
+write_int {
+    out "\$2%d";
+}
+
+read_int {
+    out "\$2";
+    in "\$2 %d";
+}
+
+read_plain_int {
+    out "\$2";
+    in "%d";
+}
+
+read_string {
+    out "\$2";
+    in "%.1/(.*)\r/";
+    # This allows spaces in strings (StreamDevice 2.5+):
+    #in "%#s";
+    # see:
+    # http://www.aps.anl.gov/epics/tech-talk/2010/msg02067.php
+    # ... but unfortunately, it also includes the terminator. Use regex (pcre) to make it easier.
+}
+
+# if you do not have PCRE support, replace the above with:
+# read_string {
+#     out "\$2";
+#     in "%#s";
+# }
