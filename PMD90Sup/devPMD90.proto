@@ -36,16 +36,6 @@ read_plain_int {
 
 read_string {
     out "\$2";
-    in "%.1/(.*)\r/";
-    # This allows spaces in strings (StreamDevice 2.5+):
-    #in "%#s";
-    # see:
-    # http://www.aps.anl.gov/epics/tech-talk/2010/msg02067.php
-    # ... but unfortunately, it also includes the terminator. Use regex (pcre) to make it easier.
+    in "%#s";
+    InTerminator = "\r";
 }
-
-# if you do not have PCRE support, replace the above with:
-# read_string {
-#     out "\$2";
-#     in "%#s";
-# }
