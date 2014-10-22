@@ -3,12 +3,13 @@ PiezoMotor PMD90 EPICS Device Support
 
 EPICS StreamDevice driver for PiezoMotor PMD90 single-axis microstepping piezo drivers.
 
-This is a simple driver that gives access to:
-    1. Raw and calculated encoder positions
-    2. Waveform mode settings
-    3. Movement in positive/negative steps, stopping
-    4. Writing to NVRAM
-    5. Movement, digital input status
+This is a simple driver that only gives access to:
+
+1. Raw and calculated encoder positions
+2. Waveform mode settings
+3. Movement in positive/negative steps, stopping
+4. Writing to NVRAM
+5. Movement, digital input status
 
 Requirements
 ------------
@@ -18,7 +19,6 @@ Though it may work on other versions, the driver was tested on these:
 1. EPICS base 3.14.12.3 http://www.aps.anl.gov/epics/
 2. asyn 4-18 http://www.aps.anl.gov/epics/modules/soft/asyn/
 3. StreamDevice 2.5+ http://epics.web.psi.ch/software/streamdevice/
-4. PCRE http://www.pcre.org/
 
 Optional
 --------
