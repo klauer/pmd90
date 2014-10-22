@@ -1,7 +1,7 @@
-PiezoMotor PMD90/PMD101 EPICS Driver
-====================================
+PiezoMotor PMD90 EPICS Device Support
+=====================================
 
-EPICS StreamDevice driver for PiezoMotor PMD90/PMD101 single-axis microstepping piezo drivers.
+EPICS StreamDevice driver for PiezoMotor PMD90 single-axis microstepping piezo drivers.
 
 This is a simple driver that gives access to:
     1. Raw and calculated encoder positions
